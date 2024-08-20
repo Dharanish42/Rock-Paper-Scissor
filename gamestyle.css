@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background-color:rgb(14, 14, 14);
+
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border-color: #fff;
+   border-width: 2px;
+   border-style: solid;
+}
+
+nav h4{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+    
+}
+nav h4 span{
+    text-decoration: none;
+    color: #ff004f;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+
+    
+}
+
+
+nav ul li{
+    opacity: 100%;
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    position: relative;
+
+}
+
+nav ul li a{
+    opacity: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+
+ .game-board {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+            }
+ .column {
+                text-align: center;
+                width: 200px;
+                margin-bottom: 40px;
+            }
+    
+  .column img {
+                width: 120px;
+                height: 100px;
+                object-fit: cover;
+                
+            }
+    
+   .score-board {
+                text-align: center;
+                margin-top: 20px;
+            }
+    
+  #result {
+                font-weight: bold;
+                margin-top: 20px;
+            }
+p{
+    color: #fff;
+    padding: 13px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    
+    border-radius: 10px;
+
+}
+button:hover {
+    margin-top: 20px;
+    
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #ff004f;
+    color: #fff;
+
+}
+
+h2{
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.alignbut{
+    margin-top: 40px;
+}
+
+.but{
+    margin-top: 40px;
+}
+
+.but button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color:  #ff004f;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.but button:hover{
+    margin-top: 20px;
+    
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color:#fff;
+    color:  #ff004f;
+ 
+}
+
+
+
+
+   /* Style for rules */
+
+
+   .rules-container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #202020;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.rules-container h2 {
+    margin-bottom: 20px;
+    color: #ff004f;
+    font-size: 28px;
+}
+
+.rules-container p, .rules-container ul {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.rules-container ul {
+    list-style-type: none;
+}
+
+.rules-container ul li {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.rules-container ul li strong {
+    color: #ff004f;
+}
+
+.rules-container .link {
+    margin-top: 30px;
+}
+
+.rules-container .link a {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff004f;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.rules-container .link a:hover {
+    color: #e7618b;
+    background-color: #ffffffd5;
+    padding: 15px 25px;
+}
+
+
+   /* style for about page */
+
+   .about-container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #202020;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.about-container h2{
+    margin-bottom: 20px;
+    color: #ff004f;
+}
+
+.about-container p {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-container .link {
+    margin-top: 30px;
+}
+
+
+.about-container .link a {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff004f;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.about-container .link a:hover {
+    color: #e7618b;
+    background-color: #ffffffd5;
+    padding: 15px 25px;
+}

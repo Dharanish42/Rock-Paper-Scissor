@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorecard</title>
+    <link rel="stylesheet" href="scorecardstyle.css">
+   
+    
+</head>
+
+<body>
+    <nav>
+        <h4><span>R</span>ock <span>P</span>aper <span>S</span>cissor</h4>
+        <ul>
+            <li><a href="rps.html">Home</a></li>
+        </ul>
+        </nav>
+    <h1>Scorecard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Round</th>
+                <th>Player Move</th>
+                <th>Computer Move</th>
+            </tr>
+        </thead>
+        <tbody id="scorecardBody">
+        </tbody>
+    </table>
+
+    <button onclick="goBack()">Back</button>
+
+    <script>
+        const moves = JSON.parse(localStorage.getItem("moves"));
+        const scorecardBody = document.getElementById('scorecardBody');
+
+        moves.forEach((move, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${index + 1}</td><td>${move.player}</td><td>${move.computer}</td>`;
+            scorecardBody.appendChild(row);
+        });
+
+        function goBack() {
+            
+            window.location.href = "winner.html";
+        }
+    </script>
+</body>
+
+</html>

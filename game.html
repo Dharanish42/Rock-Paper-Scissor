@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="gamestyle.css">
+</head>
+<body>
+    <nav>
+        <h4><span>R</span>ock <span>P</span>aper <span>S</span>cissor</h4>
+        <ul>
+            <li><a href="rps.html">Back to home</a></li>
+            <li><a href="rules.html">Rules</a></li>
+        </ul>
+    </nav>
+
+    <div class="game-board">
+        <div class="column">
+            <h2>Player</h2>
+            <img id="playerMove" src="images/rock.png" alt="Player's move">
+        </div>
+        <div class="column">
+            <h2>Computer</h2>
+            <img id="computerMove" src="images/rock.png" alt="Computer's move">
+        </div>
+    </div>
+
+    <center><p id="result"></p></center>
+
+    <div class="score-board">
+        <p>Player Score: <span id="playerScore">0</span></p>
+        <p>Computer Score: <span id="computerScore">0</span></p>
+    </div>
+    <div class="alignbut">
+        <center>
+            <button onclick="play('rock')">Rock</button>
+            <button onclick="play('paper')">Paper</button>
+            <button onclick="play('scissors')">Scissors</button>
+        </center>
+    </div>
+    <div class="but">
+        <center>
+            <button onclick="resetGame()">Reset Scores</button>
+        </center>
+    </div>
+
+
+       <script>
+        let playerScore = 0;
+let computerScore = 0;
+const winningScore = 10;
+let moves = []; // To track all moves
+
+function play(playerChoice) {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+    // Update images based on choices
+    document.getElementById('playerMove').src = `images/${playerChoice}.png`;
+    document.getElementById('computerMove').src = `images/${computerChoice}.png`;
+
+    // Save the current move to the moves array
+    moves.push({
+        player: playerChoice,
+        computer: computerChoice
+    });
+
+    if (playerChoice === computerChoice) {
+        displayResult(`It's a tie! Both chose ${playerChoice}.`);
+    } else if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        playerScore++;
+        displayResult(`You win! ${playerChoice} beats ${computerChoice}.`);
+    } else {
+        computerScore++;
+        displayResult(`You lose! ${computerChoice} beats ${playerChoice}.`);
+    }
+
+    updateScores();
+
+    if (playerScore === winningScore) {
+        localStorage.setItem("winner", "Player");
+        localStorage.setItem("moves", JSON.stringify(moves));
+        window.location.href = "winner.html";
+    } else if (computerScore === winningScore) {
+        localStorage.setItem("winner", "Computer");
+        localStorage.setItem("moves", JSON.stringify(moves));
+        window.location.href = "winner.html";
+    }
+}
+
+function displayResult(message) {
+    document.getElementById('result').innerText = message;
+}
+
+function updateScores() {
+    document.getElementById('playerScore').innerText = playerScore;
+    document.getElementById('computerScore').innerText = computerScore;
+}
+
+function resetScores() {
+    playerScore = 0;
+    computerScore = 0;
+    moves = []; // Reset moves
+    updateScores();
+    document.getElementById('playerMove').src = "images/rock.png"; // Default placeholder
+    document.getElementById('computerMove').src = "images/rock.png"; // Default placeholder
+}
+
+function resetGame() {
+    resetScores();
+    displayResult("Scores have been reset. Let's play again!");
+}
+
+       </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations</title>
+   <link rel="stylesheet" href="winnerstyle.css">
+</head>
+
+<body>
+    <nav>
+        <h4><span>R</span>ock <span>P</span>aper <span>S</span>cissor</h4>
+        <ul>
+            <li><a href="rps.html">Home</a></li>
+            <li><a href="rules.html">Rules</a></li>
+        </ul>
+    </nav>
+  <center>  <h1>Congratulations, <span id="winnerName"></span>!</h1>
+    <p>Reached 10 points and won the game!</p></center>
+
+    <div class="buttons">
+        <center><button onclick="restartGame()">Restart</button>
+        <button onclick="viewScorecard()">Display Scorecard</button>
+        <button onclick="goHome()">Back to Home</button>
+    </center>
+    </div>
+
+    <script>
+        document.getElementById('winnerName').innerText = localStorage.getItem("winner");
+
+        function restartGame() {
+            localStorage.clear();
+            window.location.href = "game.html";
+        }
+
+        function viewScorecard() {
+            window.location.href = "scorecard.html";
+        }
+
+        function goHome() {
+            localStorage.clear();
+            window.location.href = "rps.html";
+        }
+    </script>
+</body>
+
+</html>
